@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" thread-count="3" data-provider-thread-count="2" parallel="true">
+    <test verbose="2" name="All tests">
+        <classes>
+            <class name="tests.HomePageTests"/>
+            <class name="tests.CartPageTests"/>
+            <class name="tests.ProductPageTests"/>
+        </classes>
+    </test>
+</suite>

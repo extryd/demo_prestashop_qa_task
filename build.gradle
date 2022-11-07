@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2'
+}
+
+allure {
+    aspectjweaver = true
+    useTestNG {
+    }
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+def allureVersion = '2.20.0'
+def lombokVersion = '1.18.24'
+
+dependencies {
+    testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.23.1'
+    testImplementation group: 'org.aeonbits.owner', name: 'owner', version: '1.0.12'
+
+    testImplementation group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+
+    testImplementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.3.0'
+    testImplementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.5.3'
+    runtimeOnly group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.9.1'
+    testImplementation group: 'io.qameta.allure', name: 'allure-java-commons', version: allureVersion
+    testImplementation group: 'io.qameta.allure', name: 'allure-assertj', version: allureVersion
+    testImplementation group: 'io.qameta.allure', name: 'allure-testng', version: allureVersion
+    testImplementation group: 'io.qameta.allure', name: 'allure-commandline', version: allureVersion
+}
+
+test.dependsOn 'cleanTest'
+test {
+
+    useTestNG() {
+    }
+}
