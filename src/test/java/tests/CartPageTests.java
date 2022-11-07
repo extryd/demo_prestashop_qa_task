@@ -107,7 +107,7 @@ public class CartPageTests extends BaseTest {
         int actualCartAreaProductsCount = cartPage.getCartAreaProductsCount();
         SoftAssertions softly = new SoftAssertions();
         softly.assertThat(actualTotalPrice).as("Actual cart total price")
-                .isEqualTo(Utils.roundTwoDigitsAfterComma(expectedTotalPrice));
+                .isEqualTo(Utils.roundToTwoDigitsAfterComma(expectedTotalPrice));
         softly.assertThat(actualTotalProductQuantity).as("Actual cart total product quantity")
                 .isEqualTo(expectedTotalProductQuantity);
         softly.assertThat(actualCartAreaProductsCount).as("Actual cart area product count")
@@ -179,7 +179,7 @@ public class CartPageTests extends BaseTest {
         int randomProductQuantity = Utils.getRandomValidProductQuantityValue();
         shoppingCartPage.setProductItemQuantity(randomProductQuantity);
         // Verify cart total items quantity and price were recalculated according to changed quantity
-        double expectedExpectedTotalProductPrice = Utils.roundTwoDigitsAfterComma(productPrice * randomProductQuantity);
+        double expectedExpectedTotalProductPrice = Utils.roundToTwoDigitsAfterComma(productPrice * randomProductQuantity);
         double actualTotalProductPrice = shoppingCartPage.getCartProductSummaryPrice();
         int actualTotalProductQuantity = shoppingCartPage.getCartProductSummaryQuantity();
         int actualCartHeaderProductsCount = shoppingCartPage.getCartAreaProductsCount();

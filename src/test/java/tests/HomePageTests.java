@@ -99,7 +99,7 @@ public class HomePageTests extends BaseTest {
         for (WebElement product : selectedProductList) {
             double productPrice = homePage.getProductPrice(product);
             int randomPreparedValidQuantity = Utils.getRandomValidProductQuantityValue();
-            expectedCartItemPrice += Utils.roundTwoDigitsAfterComma(productPrice * randomPreparedValidQuantity);
+            expectedCartItemPrice += Utils.roundToTwoDigitsAfterComma(productPrice * randomPreparedValidQuantity);
             expectedCartItemQuantity += randomPreparedValidQuantity;
 
             // Add product and get actual quantity and price
@@ -119,7 +119,7 @@ public class HomePageTests extends BaseTest {
             softly.assertThat(actualProductQuantity).as("Actual cart product quantity")
                     .isEqualTo(expectedCartItemQuantity);
             Assertions.assertThat(actualProductPrice).as("Actual cart product price")
-                    .isEqualTo(Utils.roundTwoDigitsAfterComma(expectedCartItemPrice));
+                    .isEqualTo(Utils.roundToTwoDigitsAfterComma(expectedCartItemPrice));
             softly.assertAll();
         }
     }

@@ -10,6 +10,6 @@
 Use existing stc/test/testng.xml:
 
 # Reports
-* To generate report use "allureReport" gradle task
+* To generate report use 'allureReport' gradle task
 * Report is generated in the ```/build/reports``` directory <br>
 * To open report as soon as it gets generated use 'allureServe' gradle task

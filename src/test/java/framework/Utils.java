@@ -30,7 +30,7 @@ public class Utils {
         return dataToReturn;
     }
 
-    public static double roundTwoDigitsAfterComma(double value) {
+    public static double roundToTwoDigitsAfterComma(double value) {
         return Math.round(value * 100.0) / 100.0;
     }
 
